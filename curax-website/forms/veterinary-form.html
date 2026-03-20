@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Register your veterinary clinic, hospital, or pet grooming centre on CuraX. Reach pet owners actively searching for animal care in your area." />
+  <meta name="theme-color" content="#0066CC" />
+  <title>Register Your Veterinary Facility — CuraX</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.png" />
+</head>
+<body class="form-page page-wrapper">
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">CX</div>
+        <span class="logo-text">Cura<span>X</span></span>
+      </a>
+      <span class="chip chip-orange" style="background:#FFF8E1; color:#D69E2E;">Vet Registration</span>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       FORM HEADER
+  ══════════════════════════════════════ -->
+  <div class="form-header" style="background: linear-gradient(135deg, #D69E2E, #B7791F);">
+    <div class="container">
+      <div class="form-header-inner">
+        <a href="../index.html#register" class="form-breadcrumb">← Back to Categories</a>
+        <div class="form-type-badge">🐾 Veterinary</div>
+        <h1>Register Your Vet Facility</h1>
+        <p>Quick 2-minute form · Our team contacts you within 24 hours</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       MAIN FORM AREA
+  ══════════════════════════════════════ -->
+  <div class="container">
+
+    <div class="form-card" id="formCard">
+
+      <div class="form-progress" aria-label="Form progress">
+        <div class="progress-step active"></div>
+        <div class="progress-step active"></div>
+        <div class="progress-step active"></div>
+      </div>
+
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:var(--space-lg);">
+        All fields are required. Your data is secure and never shared.
+      </p>
+
+      <form id="registrationForm" novalidate autocomplete="on">
+
+        <div class="field-group">
+
+          <!-- Full Name -->
+          <div class="field">
+            <label for="fullName">
+              Full Name <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              class="field-input"
+              placeholder="Dr. Meena Iyer"
+              autocomplete="name"
+              inputmode="text"
+              maxlength="80"
+              aria-required="true"
+            />
+            <span class="field-error hidden" id="fullNameError" role="alert"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label for="email">
+              Email Address <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="field-input"
+              placeholder="vet@yourpetclinic.com"
+              autocomplete="email"
+              inputmode="email"
+              aria-required="true"
+            />
+            <span class="field-error hidden" id="emailError" role="alert"></span>
+          </div>
+
+          <!-- Phone -->
+          <div class="field">
+            <label for="phone">
+              Phone Number <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="field-input"
+              placeholder="9876543210"
+              autocomplete="tel"
+              inputmode="numeric"
+              maxlength="10"
+              pattern="[6-9][0-9]{9}"
+              aria-required="true"
+            />
+            <span class="field-error hidden" id="phoneError" role="alert"></span>
+            <span class="field-hint">10-digit Indian mobile number starting with 6–9</span>
+          </div>
+
+          <!-- City -->
+          <div class="field">
+            <label for="city">
+              City <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <select id="city" name="city" class="field-input" aria-required="true">
+              <option value="">— Select Your City —</option>
+            </select>
+            <span class="field-error hidden" id="cityError" role="alert"></span>
+          </div>
+
+          <!-- Facility Type -->
+          <div class="field">
+            <label for="facilityType">
+              Facility Type <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <select id="facilityType" name="facilityType" class="field-input" aria-required="true">
+              <option value="">— Select Facility Type —</option>
+              <option value="Clinic">Clinic</option>
+              <option value="Hospital">Hospital</option>
+              <option value="Diagnostic">Diagnostic Centre</option>
+              <option value="Veterinary">Veterinary</option>
+            </select>
+            <span class="field-error hidden" id="facilityTypeError" role="alert"></span>
+          </div>
+
+          <!-- Facility Category (dynamic) -->
+          <div class="field">
+            <label for="facilityCategory">
+              Veterinary Type <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <select id="facilityCategory" name="facilityCategory" class="field-input" disabled aria-required="true">
+              <option value="">— Select Category —</option>
+            </select>
+            <span class="field-error hidden" id="facilityCategoryError" role="alert"></span>
+            <span class="field-hint">Select Facility Type first to see categories</span>
+          </div>
+
+          <!-- Business Name -->
+          <div class="field">
+            <label for="businessName">
+              Facility / Centre Name <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="businessName"
+              name="businessName"
+              class="field-input"
+              placeholder="Happy Paws Veterinary Clinic"
+              autocomplete="organization"
+              inputmode="text"
+              maxlength="100"
+              aria-required="true"
+            />
+            <span class="field-error hidden" id="businessNameError" role="alert"></span>
+          </div>
+
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" class="submit-btn" id="submitBtn"
+            style="background: linear-gradient(135deg, #D69E2E, #B7791F); box-shadow: 0 4px 14px rgba(214,158,46,0.35);"
+            aria-live="polite">
+            <span class="btn-spinner" aria-hidden="true"></span>
+            <span class="btn-text">Register Now →</span>
+          </button>
+          <p class="form-disclaimer">
+            🔒 Your data is 100% secure · No spam · We contact you within 24 hours
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- SUCCESS PANEL -->
+    <div class="success-panel" id="successPanel" role="status" aria-live="polite">
+      <div class="success-icon">✅</div>
+      <h2>Vet Facility Registered!</h2>
+      <p>
+        Thank you for registering your veterinary facility on CuraX.<br />
+        Our partner success manager will contact you within <strong>24 hours</strong>.
+      </p>
+      <a href="../index.html" class="btn btn-blue mt-md">Back to Home</a>
+      <button onclick="registerAnother()" class="btn mt-sm"
+        style="color:var(--text-secondary); border:1.5px solid var(--border); background:transparent;">
+        Register Another Facility
+      </button>
+    </div>
+
+  </div>
+
+  <footer class="footer" style="margin-top:auto;">
+    <div class="container">
+      <p class="footer-bottom" style="text-align:center;">
+        © 2024 CuraX · <a href="../index.html" style="color:rgba(255,255,255,0.5);">Home</a> ·
+        <a href="#" style="color:rgba(255,255,255,0.5);">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script src="../script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initCuraXForm("registrationForm", "Veterinary");
+    });
+  </script>
+</body>
+</html>
